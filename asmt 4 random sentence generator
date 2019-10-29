@@ -36,5 +36,17 @@ for line in fileinput.input():
 
 string = "<start>"
 
+def generateSentence(fileinput):
+# select one production of this symbol randomly
+        rand_prod = random.choice(self.prod[fileinput])
+
+        for sym in rand_prod:
+            # for non-terminals, recurse
+            if sym in self.prod:
+                string.append(sym)
+            else:
+                string += sym 
+
+        return string
 # Expand string, printing each step of the expansion, until there are
 # no non-terminals left.
